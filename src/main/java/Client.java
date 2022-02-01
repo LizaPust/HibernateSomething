@@ -10,6 +10,7 @@ public class Client {
 
     @Column(name = "Client_NAME")
     private String name;
+    //
 
     @Column(name = "Adress")
     private String adress;
