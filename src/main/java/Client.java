@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "Client")
@@ -10,13 +11,15 @@ public class Client {
 
     @Column(name = "Client_NAME")
     private String name;
-    //
 
     @Column(name = "Adress")
     private String adress;
 
     @Column(name = "Phone_number")
     private String number;
+
+    @OneToMany (mappedBy="Client_Id", cascade=CascadeType.ALL)
+    private Collection<Orders> tenants;
 
     public Integer getId() {
         return id;
@@ -52,7 +55,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Clients [id=" + id + ", name=" + name + ", number=" + number + ", adress=" + adress + "]";
+      return "Clients [id=" + id + ", name=" + name + ", number=" + number + ", adress=" + adress + "]";
     }
 
 }

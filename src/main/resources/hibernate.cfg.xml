@@ -17,5 +17,7 @@
 
         <mapping class="Client"/>
 
+        <mapping class="Orders"/>
+
     </session-factory>
     </hibernate-configuration>
